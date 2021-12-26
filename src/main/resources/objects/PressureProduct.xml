@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<BaseCtrl Class="PressureProduct">
+    <Canvas Width="56" Height="20">
+        <Path Fill="DarkGray">
+            <Path.Data>
+                <PathGeometry Figures="M 36,10 L 26,0 L 56,0 L 56,20 L 26,20 Z"/>
+            </Path.Data>
+        </Path>
+        <Path Stroke="BLack" Fill="LightGray">
+            <Path.Data>
+                <PathGeometry Figures="M 36,10 L 12,10 L 12,4 L 0,4 L 0,16 L 12,16 L 12,10 M 36,10 Z"/>
+            </Path.Data>
+        </Path>
+        <Glyphs FontUri="TIMES" FontRenderingEmSize="14" StyleSimulations="None" UnicodeString="BL" Fill="Black"
+                OriginX="36" OriginY="14"/>
+        <Glyphs FontUri="TIMES" FontRenderingEmSize="10" StyleSimulations="None" UnicodeString="1" Fill="Black"
+                OriginX="3.5" OriginY="13.5"/>
+    </Canvas>
+</BaseCtrl>
