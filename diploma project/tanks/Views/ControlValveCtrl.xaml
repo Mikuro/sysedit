@@ -1,0 +1,42 @@
+﻿<local:BaseCtrl x:Class="tanks.Views.ControlValveCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tanks.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="78">
+    <Canvas Width="78" Height="35">
+        <Path  Stroke="Black" Fill="LightGray">
+            <Path.Data>
+                <PathGeometry Figures="M 24,15 L 39,25 L 39,7 L 27,7
+                              C 29,0,34,0 39,0
+                              C 44,0,49,0 51,7
+                              L 39,7 L 39,25 L 54,15 L 54,25
+                              L 66,25 L 66,19 L78,19 L 78,31 L 66,31 L 66,25 L54,25
+                              L 54,35 L 39,25 L 24,35
+                              L 24,25 L 12,25 L 12,31 L 0,31 L 0,19 L 12,19 L 12,25
+                              L 24,25
+                              Z"/>
+            </Path.Data>
+        </Path>
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "1"
+         Fill                = "Black"
+         OriginX             = "3"
+         OriginY             = "28.5"
+            />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "1"
+         Fill                = "Black"
+         OriginX             = "70"
+         OriginY             = "28.5"
+            />
+    </Canvas>
+</local:BaseCtrl>

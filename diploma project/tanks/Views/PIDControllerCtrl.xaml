@@ -1,0 +1,57 @@
+﻿<local:BaseCtrl x:Class="tanks.Views.PIDControllerCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tanks.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="78">
+    <Canvas Width="78" Height="30">
+        <Path  Stroke="Black" Fill="LightGray">
+            <Path.Data>
+                <PathGeometry Figures="M 3,9 L 15,9 L 15,15 L 27,15 A 15,15,143.1301,0,1,54,6 L 66,6 L 66,0 L 78,0 L 78,12 L 66,12 L 66,6
+                              L 54,6 
+                              A 15,15,73.7398,0,1,54,24 L 66,24 L 66,18 L 78,18 L 78,30 L 66,30 L 66,24
+                              L 54,24
+                              A 15,15,143.1301,0,1,27,15 
+                              L 15,15 L 15,21 L 3,21Z"/>
+            </Path.Data>
+        </Path>
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "12"
+         StyleSimulations    = "None"
+         UnicodeString       = "PID"
+         Fill                = "Black"
+         OriginX             = "32"
+         OriginY             = "19"
+      />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "P"
+         Fill                = "Black"
+         OriginX             = "6"
+         OriginY             = "18"
+      />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "M"
+         Fill                = "Black"
+         OriginX             = "68"
+         OriginY             = "9"
+      />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "C"
+         Fill                = "Black"
+         OriginX             = "68"
+         OriginY             = "28"
+      />
+    </Canvas>
+</local:BaseCtrl>

@@ -1,0 +1,14 @@
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\bin\Debug\net462\TestLib.dll
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\bin\Debug\net462\TestLib.pdb
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\bin\Debug\net462\tanks.Models.dll
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\bin\Debug\net462\tanks.Utils.dll
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\bin\Debug\net462\tanks.Models.pdb
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\bin\Debug\net462\tanks.Utils.pdb
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.csproj.AssemblyReference.cache
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.AssemblyInfoInputs.cache
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.AssemblyInfo.cs
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.csproj.CopyComplete
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.dll
+C:\Users\anton\Desktop\DAproj\tanks\TestLib\obj\Debug\net462\TestLib.pdb

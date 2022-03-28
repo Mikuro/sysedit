@@ -1,0 +1,79 @@
+﻿<local:BaseCtrl x:Class="tanks.Views.HeatExchangerCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tanks.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="98" d:DesignWidth="98">
+    <Canvas Width="98" Height="98">
+        <Path  Stroke="Black" Fill="LightGray">
+            <Path.Data>
+                <PathGeometry Figures="M 24,49
+                              A 25,25,90,0,1 49,24
+                              L 49,23 L 47,21 L 47,21
+                              L 49,23 L 51,21 L 51,21
+                              L 49,23 
+                              L 49,12 L 43,12 L 43,0 L 55,0 L 55,12 L 49,12
+                              L 49,24
+                            A 25,25,90,0,1 74,49
+                              L 85,49 L 83,47 L 83,47
+                              L 85,49 L 83,51 L 83,51
+                              L 85,49
+                            L 86,49 L 86,43 L98,43 L 98,55 L 86,55 L 86,49 L 74,49
+                              A 25,25,90,0,1 49,74
+                              L 49,85 L 51,83 L 51,83
+                              L 49,85 L 47,83 L 47,83
+                              L 49,85
+                              L 49,86 L 55,86 L 55,98 L 43,98 L 43,86 L 49,86
+                              L 49,74
+                            A 25,25,90,0,1 24,49
+                              L 34,49 L 39,39 L 59,59 L 64,49 L 74,49
+                              L 74,49 L 64,49 L 59,59 L 39,39 L 34,49
+                              L 24,49
+                              L 23,49 L 21,47 L 21,47
+                              L 23,49 L 21,51 L 21,51
+                              L 23,49
+                              L 12,49 L 12,55 L 0,55 L 0,43 L 12,43 L 12,49
+                            L 24,49
+                            Z"/>
+            </Path.Data>
+        </Path>
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "2"
+         Fill                = "Black"
+         OriginX             = "3"
+         OriginY             = "52.5"
+            />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "1"
+         Fill                = "Black"
+         OriginX             = "46.5"
+         OriginY             = "9"
+            />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "2"
+         Fill                = "Black"
+         OriginX             = "90"
+         OriginY             = "52.5"
+            />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "1"
+         Fill                = "Black"
+         OriginX             = "46.5"
+         OriginY             = "95"
+            />
+    </Canvas>
+</local:BaseCtrl>

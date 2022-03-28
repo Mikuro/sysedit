@@ -1,0 +1,15 @@
+################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/tanks/obj
+/tanks/bin
+/Models/obj
+/Models/bin
+/IntegrationTests/obj
+/IntegrationTests/bin
+/IntegrationTests/TestResults
+/IntegrationTests/coverage.json
+/TestResults
+/artifacts

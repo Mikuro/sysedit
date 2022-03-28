@@ -1,0 +1,300 @@
+﻿<UserControl x:Class="tanks.Views.FlowSheet"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tanks.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Focusable="False">
+            <Canvas Width="{Binding flowDiagram.Width}" Height="{Binding flowDiagram.Height}" Background="LightGray">
+                <Canvas.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </TransformGroup>
+                </Canvas.LayoutTransform>
+                <ItemsControl ItemsSource="{Binding flowDiagram.Links}" Focusable="False">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas 
+                            Width="{Binding flowDiagram.Width}" Height="{Binding flowDiagram.Height}" AllowDrop="True">
+                            </Canvas>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ContentType}" Value="Stream"/>
+                                        <Condition Binding="{Binding Path=Type}" Value="Liquid"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <MultiDataTrigger.Setters>
+                                        <Setter Property="ContentPresenter.ContentTemplate">
+                                            <Setter.Value>
+                                                <DataTemplate>
+                                                    <Path Stroke="#00D4F5" StrokeThickness="5" Data="{Binding Figures}"/>
+                                                </DataTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </MultiDataTrigger.Setters>
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ContentType}" Value="Stream"/>
+                                        <Condition Binding="{Binding Path=Type}" Value="Vapor"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <MultiDataTrigger.Setters>
+                                        <Setter Property="ContentPresenter.ContentTemplate">
+                                            <Setter.Value>
+                                                <DataTemplate>
+                                                    <Path Stroke="Orange" StrokeThickness="5" Data="{Binding Figures}"/>
+                                                </DataTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </MultiDataTrigger.Setters>
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ContentType}" Value="Stream"/>
+                                        <Condition Binding="{Binding Path=Type}" Value="VaporAndLiquid"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <MultiDataTrigger.Setters>
+                                        <Setter Property="ContentPresenter.ContentTemplate">
+                                            <Setter.Value>
+                                                <DataTemplate>
+                                                    <Path Stroke="Magenta" StrokeThickness="5" Data="{Binding Figures}"/>
+                                                </DataTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </MultiDataTrigger.Setters>
+                                </MultiDataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="Signal">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Path StrokeDashArray="1 2" Stroke="Black" StrokeThickness="1" Data="{Binding Figures}"/>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+                <ItemsControl ItemsSource="{Binding flowDiagram.Items}" Focusable="False">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <Canvas 
+                            Width="{Binding flowDiagram.Width}" Height="{Binding flowDiagram.Height}" AllowDrop="True">
+                            </Canvas>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemContainerStyle>
+                        <Style TargetType="ContentPresenter">
+                            <Setter Property="Canvas.Left" Value="{Binding X}" />
+                            <Setter Property="Canvas.Top" Value="{Binding Y}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="PressureFeed">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:PressureFeedCtrl/>
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="PressureProduct">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:PressureProductCtrl/>
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="ControlValve">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:ControlValveCtrl/>
+                                                    <TextBlock Canvas.Left="20" Canvas.Top="35" Text="{Binding Display}" Foreground="Blue" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="LiquidTank">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <local:LiquidTankCtrl/>
+                                                    <TextBlock Canvas.Top="30" Canvas.Left="5" Text="{Binding Id}" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="FlowMeter">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:FlowMeterCtrl/>
+                                                    <TextBlock Canvas.Top="40" Text="{Binding Display}" Foreground="Blue" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="LiquidLevelMeter">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:LiquidLevelMeterCtrl/>
+                                                    <TextBlock Canvas.Top="40" Text="{Binding Display}" Foreground="Blue" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="PressureGauge">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:PressureGaugeCtrl/>
+                                                    <TextBlock Canvas.Top="40" Text="{Binding Display}" Foreground="Blue" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="PIDController">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <local:PIDControllerCtrl/>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <TextBlock Canvas.Left="20" Canvas.Top="30" Text="{Binding Display}" Foreground="Blue" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="Strainer">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:StrainerCtrl/>
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="Pump">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:PumpCtrl/>
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="Pipe">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:PipeCtrl/>
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="Splitter">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:SplitterCtrl/>
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="Mixer">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:MixerCtrl/>
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="HeatExchanger">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <local:HeatExchangerCtrl/>
+                                                    <TextBlock Canvas.Top="5" Canvas.Left="5" Text="{Binding Id}" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=ContentType}" Value="Thermometer">
+                                    <Setter Property="ContentPresenter.ContentTemplate">
+                                        <Setter.Value>
+                                            <DataTemplate>
+                                                <Canvas>
+                                                    <TextBlock Canvas.Top="-20" Text="{Binding Id}" />
+                                                    <local:ThermometerCtrl/>
+                                                    <TextBlock Canvas.Top="40" Text="{Binding Display}" Foreground="Blue" />
+                                                </Canvas>
+                                            </DataTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ItemsControl.ItemContainerStyle>
+                </ItemsControl>
+            </Canvas>
+        </ScrollViewer>
+        <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3"
+        HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        <local:RuntimeDataView Grid.Column="2" Focusable="False" DataContext="{Binding runtimeData}"/>
+    </Grid>
+</UserControl>

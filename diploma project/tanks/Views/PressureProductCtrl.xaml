@@ -1,0 +1,39 @@
+﻿<local:BaseCtrl x:Class="tanks.Views.PressureProductCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tanks.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="56">
+    <Canvas Width="56" Height="20">
+        <Path Fill="DarkGray">
+            <Path.Data>
+                <PathGeometry Figures="M 36,10 L 26,0 L 56,0 L 56,20 L 26,20 Z"/>
+            </Path.Data>
+        </Path>
+        <Path Stroke="BLack" Fill="LightGray">
+            <Path.Data>
+                <PathGeometry Figures="M 36,10 L 12,10 L 12,4 L 0,4 L 0,16 L 12,16 L 12,10 M 36,10 Z"/>
+            </Path.Data>
+        </Path>
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "14"
+         StyleSimulations    = "None"
+         UnicodeString       = "BL"
+         Fill                = "Black"
+         OriginX             = "36"
+         OriginY             = "14"
+      />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "1"
+         Fill                = "Black"
+         OriginX             = "3.5"
+         OriginY             = "13.5"
+      />
+    </Canvas>
+</local:BaseCtrl>

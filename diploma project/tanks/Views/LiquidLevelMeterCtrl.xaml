@@ -1,0 +1,25 @@
+﻿<local:BaseCtrl x:Class="tanks.Views.LiquidLevelMeterCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tanks.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="41" d:DesignWidth="24">
+    <Canvas Width="24" Height="41">
+        <Path  Stroke="Black" Fill="LightGray">
+            <Path.Data>
+                <PathGeometry Figures="M 12,24 A 12,12,180,0,1,12,0 A 12,12,180,0,1,12,24 L 12,31 A 5,5,36.8699,0,1,15,32 L 9,40 A 5,5,106.2602,0,1,9,32 L 15,40 A 5,5,106.2602,0,0,15,32 L 9,40 A 5,5,73.7398,0,0,15,40 L 9,32 A 5,5,36.8699,0,1,12,31 Z"/>
+            </Path.Data>
+        </Path>
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "12"
+         StyleSimulations    = "None"
+         UnicodeString       = "LT"
+         Fill                = "Black"
+         OriginX             = "4.5"
+         OriginY             = "16.5"
+      />
+    </Canvas>
+</local:BaseCtrl>

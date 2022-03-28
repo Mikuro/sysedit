@@ -1,0 +1,45 @@
+﻿<local:BaseCtrl x:Class="tanks.Views.PumpCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:tanks.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="33" d:DesignWidth="78">
+    <Canvas Width="78" Height="33">
+        <Path  Stroke="Black" Fill="LightGray">
+            <Path.Data>
+                <PathGeometry Figures="M 24,18 L39,18 L39,18 L 24,18
+                            A 15,15,90,0,1 39,3
+                            L 59,3 L 59,6 
+                            L 66,6 L 66,0 L78,0 L 78,12 L 66,12 L 66,6 L 59,6 
+                            L 59,9
+                            L 51,9 
+                            A 15,15,45,0,1 54,18
+                            A 15,15,45,0,1 49.6,28.6 L 54,33 L 24,33 L 28.4,28.6
+                            A 15,15,45,0,1 24,18
+                            L 24,18 L 12,18 L 12,24 L 0,24 L 0,12 L 12,12 L 12,18
+                            L 24,18
+                            Z"/>
+            </Path.Data>
+        </Path>
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "1"
+         Fill                = "Black"
+         OriginX             = "3"
+         OriginY             = "21.5"
+            />
+        <Glyphs
+         FontUri             = "pack://application:,,,/Fonts/TIMES.TTF"
+         FontRenderingEmSize = "10"
+         StyleSimulations    = "None"
+         UnicodeString       = "1"
+         Fill                = "Black"
+         OriginX             = "70"
+         OriginY             = "9.5"
+            />
+    </Canvas>
+</local:BaseCtrl>

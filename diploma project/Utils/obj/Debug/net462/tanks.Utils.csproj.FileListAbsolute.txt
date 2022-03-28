@@ -1,0 +1,12 @@
+C:\Users\anton\Desktop\DAproj\tanks\Utils\bin\Debug\net462\tanks.Utils.dll
+C:\Users\anton\Desktop\DAproj\tanks\Utils\bin\Debug\net462\tanks.Utils.pdb
+C:\Users\anton\Desktop\DAproj\tanks\Utils\bin\Debug\net462\tanks.Models.dll
+C:\Users\anton\Desktop\DAproj\tanks\Utils\bin\Debug\net462\tanks.Models.pdb
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.csproj.AssemblyReference.cache
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.AssemblyInfoInputs.cache
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.AssemblyInfo.cs
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.csproj.CoreCompileInputs.cache
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.csproj.CopyComplete
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.dll
+C:\Users\anton\Desktop\DAproj\tanks\Utils\obj\Debug\net462\tanks.Utils.pdb
